@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 
 export default function Character({ abilities, catchphrase, chapter, family, id, image, isHuman, japaneseName, living, name, nationality }) {

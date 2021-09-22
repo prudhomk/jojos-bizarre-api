@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchCharacters } from '../services/jojoApi.js';
+import { fetchCharacters, fetchStands } from '../services/jojoApi.js';
 
 export const useCharacters = () => {
   const [characters, setCharacters] = useState([]);
@@ -11,5 +11,18 @@ export const useCharacters = () => {
 
   }, []);
 
-  return { characters } ;
+  return { characters };
 };
+
+export const useStands = () => {
+  const [stands, setStands] = useState([]);
+
+  useEffect(() => {
+    
+    fetchStands()
+      .then(setStands);
+  }, []);
+
+  return { stands };
+};
+
