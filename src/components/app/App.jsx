@@ -5,6 +5,7 @@ import StandList from '../stands/StandList';
 import Home from '../home/Home';
 import CharacterDetails from '../characters/CharacterDetails';
 import StandDetails from '../stands/StandDetails';
+import CharacterForm from '../forms/CharacterForm';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route exact path="/characters" component={CharacterList}/>
+        <Route exact path="/characters/addCharacter" component={CharacterForm}/>
         <Route exact path="/characters/:id" component={CharacterDetails}/>
         <Route exact path="/stands" component={StandList}/>
         <Route exact path="/stands/:id" component={StandDetails}/>
