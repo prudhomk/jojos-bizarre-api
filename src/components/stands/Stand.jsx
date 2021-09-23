@@ -1,17 +1,15 @@
 /* eslint-disable max-len */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Stand({ name, japaneseName, alternateName, image, standUser, chapter, abilities, battlecry }) {
+export default function Stand({ id, name, image, standUser }) {
   return (
     <>
-      <p>Name: {name}</p>
-      <p>Japanese: {japaneseName}</p>
-      <p>Alternate Name: {alternateName}</p>
-      <p>Image: {image}</p>
-      <p>Stand User: {standUser}</p>
-      <p>Chapter: {chapter}</p>
-      <p>Abilities: {abilities}</p>
-      <p>Battlecry: {battlecry}</p>
+      <Link to={`/stands/${id}`}>
+        <p>Name: {name}</p>
+        <p>Image: {image}</p>
+        <p>Stand User: {standUser}</p>
+      </Link>
     </>
   );
 }

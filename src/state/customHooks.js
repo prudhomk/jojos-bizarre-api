@@ -1,5 +1,6 @@
+/* eslint-disable max-len */
 import { useEffect, useState } from 'react';
-import { fetchCharacters, fetchCharacter, fetchStands } from '../services/jojoApi.js';
+import { fetchCharacters, fetchCharacter, fetchStands, fetchStand } from '../services/jojoApi.js';
 
 export const useCharacters = () => {
   const [characters, setCharacters] = useState([]);
@@ -37,5 +38,17 @@ export const useStands = () => {
   }, []);
 
   return { stands };
+};
+
+export const useStand = (id) => {
+  const [stand, setStand] = useState({});
+
+  useEffect(() => {
+    
+    fetchStand(id)
+      .then(setStand);
+  }, [id]);
+  
+  return stand;
 };
 

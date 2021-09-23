@@ -23,3 +23,11 @@ export const fetchStands = async () => {
 
   return stands;
 };
+
+export const fetchStand = async (id) => {
+  
+  const res = await fetch(`https://stormy-beach-42304.herokuapp.com/api/v1/stands/${id}`);
+  const stand = await res.json();
+  
+  return stand;
+};

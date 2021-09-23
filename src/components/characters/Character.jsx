@@ -1,19 +1,15 @@
 /* eslint-disable max-len */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Character({ abilities, catchphrase, chapter, family, id, image, isHuman, japaneseName, living, name, nationality }) {
+export default function Character({ id, chapter, image, name }) {
   return (
     <>
-      <p>Name: {name}</p>
-      <p>Japanese Name: {japaneseName}</p>
-      <p>{image}</p>
-      <p>Catchphrase: {catchphrase}</p>
-      <p>Nationality: {nationality}</p>
-      <p>Abilities: {abilities}</p>
-      <p>Chapter: {chapter}</p>
-      <p>Family: {family}</p>
-      <p>IsHuman: {isHuman.toString()}</p>
-      <p>Living: {living.toString()}</p>
+      <Link to={`/characters/${id}`}>
+        <p>Name: {name}</p>
+        <p>{image}</p>
+        <p>Chapter: {chapter}</p>
+      </Link>
     </>
   );
 }
