@@ -16,6 +16,24 @@ export const fetchCharacter = async (id) => {
   return character;
 };
 
+export const createCharacter = async (character) => {
+
+  console.log('jojoapi', character.name);
+  console.log('jojo char', character);
+
+  const res = await fetch('https://stormy-beach-42304.herokuapp.com/api/v1/characters', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(character)
+  }); 
+
+  const newCharacter = await res.json();
+
+  console.log('res', res);
+  
+  return newCharacter;
+};
+
 export const fetchStands = async () => {
 
   const res = await fetch('https://stormy-beach-42304.herokuapp.com/api/v1/stands');
@@ -31,3 +49,4 @@ export const fetchStand = async (id) => {
   
   return stand;
 };
+
