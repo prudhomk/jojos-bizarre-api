@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router';
 import { createCharacter } from '../../services/jojoApi';
 
 export default function CharacterForm() {
+  const history = useHistory();
+
   const [name, setName] = useState('');
   const [japaneseName, setJapaneseName] = useState('');
   const [image, setImage] = useState('');
@@ -67,6 +70,7 @@ export default function CharacterForm() {
     });
 
     console.log('new character', newCharacter);
+    history.push(`/characters/${newCharacter.id}`);
   };
 
   return (

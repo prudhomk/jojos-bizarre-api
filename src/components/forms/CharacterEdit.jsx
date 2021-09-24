@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import { editCharacter } from '../../services/jojoApi';
 import { useCharacter } from '../../state/customHooks.js';
 
@@ -8,6 +9,7 @@ export default function CharacterEdit() {
   
   const { id } = useParams();
   const existingCharacter = useCharacter(id);
+  const history = useHistory();
   
   useEffect(() => {
     setName(existingCharacter.name);
@@ -20,7 +22,7 @@ export default function CharacterEdit() {
     setFamily(existingCharacter.family);
     setIsHuman(existingCharacter.isHuman);
     setLiving(existingCharacter.living);
-    console.log('edit form', existingCharacter.isHuman);
+
   }, [existingCharacter]);
 
   
@@ -34,9 +36,6 @@ export default function CharacterEdit() {
   const [family, setFamily] = useState('');
   const [isHuman, setIsHuman] = useState(false);
   const [living, setLiving] = useState(false);
-
-  
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -55,6 +54,8 @@ export default function CharacterEdit() {
       living
     }, id);
     console.log('hello', editedCharacter);
+
+    history.push(`/characters/${id}`);
   };
 
   const handleChange = ({ target }) => {
@@ -200,6 +201,8 @@ export default function CharacterEdit() {
         </label>
         <button>Edit Character</button>
       </form>
+
+      <Link to={`/characters/${id}`}>Return Character's Details Page</Link>
     </div>
   );
 }

@@ -36,8 +36,16 @@ export const editCharacter = async (character, id) => {
   });
   
   const editCharacter = await res.json();
-  console.log('fetch edit', editCharacter);
   return editCharacter;
+};
+
+export const deleteCharacter = async (id) => {
+  
+  const res = await fetch(`https://stormy-beach-42304.herokuapp.com/api/v1/characters/${id}`, {
+    method: 'DELETE'
+  });
+  
+  if(res.status === 200) alert('Character successfully deleted');
 };
 
 export const fetchStands = async () => {
