@@ -18,9 +18,6 @@ export const fetchCharacter = async (id) => {
 
 export const createCharacter = async (character) => {
 
-  console.log('jojoapi', character.name);
-  console.log('jojo char', character);
-
   const res = await fetch('https://stormy-beach-42304.herokuapp.com/api/v1/characters', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
@@ -28,10 +25,19 @@ export const createCharacter = async (character) => {
   }); 
 
   const newCharacter = await res.json();
-
-  console.log('res', res);
-  
   return newCharacter;
+};
+
+export const editCharacter = async (character, id) => {
+  const res = await fetch(`https://stormy-beach-42304.herokuapp.com/api/v1/characters/${id}`, {
+    method: 'PUT',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(character, id)
+  });
+  
+  const editCharacter = await res.json();
+  console.log('fetch edit', editCharacter);
+  return editCharacter;
 };
 
 export const fetchStands = async () => {
