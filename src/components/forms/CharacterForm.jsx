@@ -80,7 +80,6 @@ export default function CharacterForm() {
             required
             name="name" 
             placeholder="Name" 
-            type="text"
             value={name}
             onChange={handleChange}
           />
@@ -91,7 +90,6 @@ export default function CharacterForm() {
             required
             name="japaneseName" 
             placeholder="Japanese Name" 
-            type="text"
             value={japaneseName}
             onChange={handleChange}
           />
@@ -102,7 +100,6 @@ export default function CharacterForm() {
             required
             name="image" 
             placeholder="Image" 
-            type="text"
             value={image}
             onChange={handleChange}
           />
@@ -113,7 +110,6 @@ export default function CharacterForm() {
             required
             name="catchphrase" 
             placeholder="Catchphrase" 
-            type="text"
             value={catchphrase}
             onChange={handleChange}
           />
@@ -124,7 +120,6 @@ export default function CharacterForm() {
             required
             name="nationality" 
             placeholder="Nationality" 
-            type="text"
             value={nationality}
             onChange={handleChange}
           />
@@ -135,7 +130,6 @@ export default function CharacterForm() {
             required
             name="abilities" 
             placeholder="Abilities" 
-            type="text"
             value={abilities}
             onChange={handleChange}
           />
@@ -146,7 +140,6 @@ export default function CharacterForm() {
             required
             name="chapter" 
             placeholder="Chapter" 
-            type="text"
             value={chapter}
             onChange={handleChange}
           />
@@ -157,7 +150,6 @@ export default function CharacterForm() {
             required
             name="family" 
             placeholder="Family" 
-            type="text"
             value={family}
             onChange={handleChange}
           />

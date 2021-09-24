@@ -14,7 +14,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route exact path="/characters" component={CharacterList}/>
-        <Route exact path="/characters/addCharacter" component={CharacterForm}/>
+        <Route exact path="/characters/add" component={CharacterForm}/>
         <Route exact path="/characters/:id" component={CharacterDetails}/>
         <Route exact path="/stands" component={StandList}/>
         <Route exact path="/stands/:id" component={StandDetails}/>

@@ -23,13 +23,13 @@ export const createCharacter = async (character) => {
 
   const res = await fetch('https://stormy-beach-42304.herokuapp.com/api/v1/characters', {
     method: 'POST',
-    header: { 'Content-Type': 'application/json' },
+    headers: { 'content-type': 'application/json' },
     body: JSON.stringify(character)
   }); 
 
   const newCharacter = await res.json();
 
-  console.log('res', newCharacter);
+  console.log('res', res);
   
   return newCharacter;
 };
