@@ -1,7 +1,29 @@
-import React, { useState } from 'react';
-import { createCharacter } from '../../services/jojoApi';
+/* eslint-disable max-len */
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router';
+import { editCharacter } from '../../services/jojoApi';
+import { useCharacter } from '../../state/customHooks.js';
 
-export default function CharacterForm() {
+export default function CharacterEdit() {
+  
+  const { id } = useParams();
+  const existingCharacter = useCharacter(id);
+  
+  useEffect(() => {
+    setName(existingCharacter.name);
+    setJapaneseName(existingCharacter.japaneseName);
+    setImage(existingCharacter.image);
+    setCatchphrase(existingCharacter.catchphrase);
+    setNationality(existingCharacter.nationality);
+    setAbilities(existingCharacter.abilities);
+    setChapter(existingCharacter.chapter);
+    setFamily(existingCharacter.family);
+    setIsHuman(existingCharacter.isHuman);
+    setLiving(existingCharacter.living);
+    console.log('edit form', existingCharacter.isHuman);
+  }, [existingCharacter]);
+
+  
   const [name, setName] = useState('');
   const [japaneseName, setJapaneseName] = useState('');
   const [image, setImage] = useState('');
@@ -12,6 +34,28 @@ export default function CharacterForm() {
   const [family, setFamily] = useState('');
   const [isHuman, setIsHuman] = useState(false);
   const [living, setLiving] = useState(false);
+
+  
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const editedCharacter = await editCharacter({
+      id,
+      name,
+      japaneseName,
+      image,
+      catchphrase,
+      nationality,
+      abilities,
+      chapter,
+      family,
+      isHuman,
+      living
+    }, id);
+    console.log('hello', editedCharacter);
+  };
 
   const handleChange = ({ target }) => {
     switch(target.name) {
@@ -46,131 +90,115 @@ export default function CharacterForm() {
         setLiving(target.value);
         break;
       default:
-        console.log('No matches found');
+        console.log('No data found');
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const newCharacter = await createCharacter({
-      name,
-      japaneseName,
-      image,
-      catchphrase,
-      nationality,
-      abilities,
-      chapter,
-      family,
-      isHuman,
-      living
-    });
-
-    console.log('new character', newCharacter);
-  };
-
+ 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <label>
-        Name: 
-          <input 
+          Name:
+          <input
             required
-            name="name" 
-            placeholder="Name" 
+            name="name"
+            placeholder="Name"
             value={name}
             onChange={handleChange}
           />
         </label>
         <label>
-        Japanese Name: 
+          Japanese Name:
           <input 
             required
-            name="japaneseName" 
-            placeholder="Japanese Name" 
+            name="japaneseName"
+            placeholder="Japanese Name"
             value={japaneseName}
             onChange={handleChange}
           />
         </label>
         <label>
-        Image: 
-          <input 
+          Image:
+          <input
             required
-            name="image" 
-            placeholder="Image" 
+            name="image"
+            placeholder="Image"
             value={image}
             onChange={handleChange}
           />
         </label>
         <label>
-        Catchphrase: 
-          <input 
+          Catchphrase:
+          <input
             required
-            name="catchphrase" 
-            placeholder="Catchphrase" 
+            name="catchphrase"
+            placeholder="Catchphrase"
             value={catchphrase}
             onChange={handleChange}
           />
         </label>
         <label>
-        Nationality: 
-          <input 
+          Nationality:
+          <input
             required
-            name="nationality" 
-            placeholder="Nationality" 
+            name="nationality"
+            placeholder="Nationality"
             value={nationality}
             onChange={handleChange}
           />
         </label>
         <label>
-        Abilities: 
-          <input 
+          Abilities:
+          <input
             required
-            name="abilities" 
-            placeholder="Abilities" 
+            name="abilities"
+            placeholder="Abilities"
             value={abilities}
             onChange={handleChange}
           />
         </label>
         <label>
-        Chapter: 
-          <input 
+          Chapter:
+          <input
             required
-            name="chapter" 
-            placeholder="Chapter" 
+            name="chapter"
+            placeholder="Chapter"
             value={chapter}
             onChange={handleChange}
           />
         </label>
         <label>
-        Family: 
-          <input 
+          Family:
+          <input
             required
-            name="family" 
-            placeholder="Family" 
+            name="family"
+            placeholder="Family"
             value={family}
             onChange={handleChange}
           />
         </label>
         <label>
-        Is a human? 
-          <input 
-            name="isHuman" 
+          Is a human?
+          <input
+            name="isHuman"
             type="checkbox"
             value={isHuman}
+            checked={isHuman}
             onChange={((e) => setIsHuman(e.target.checked))}
           />
         </label>
         <label>
-        Is currently living? 
+          Is currently living?
           <input 
-            name="living"  
+            name="living"
             type="checkbox"
             value={living}
+            checked={living}
             onChange={((e) => setLiving(e.target.checked))}
           />
         </label>
-        <button>Create New Character</button>
+        <button>Edit Character</button>
       </form>
     </div>
   );
