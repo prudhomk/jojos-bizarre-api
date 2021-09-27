@@ -2,13 +2,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Character({ id, chapter, image, name }) {
+export default function Stand({ id, name, image, standUser }) {
   return (
     <>
-      <Link to={`/characters/${id}`}>
+      <Link to={`/stands/${id}`}>
         <p>Name: {name}</p>
-        <p>{image}</p>
-        <p>Chapter: {chapter}</p>
+        <p>Image: {image}</p>
+        <p>Stand User: {standUser}</p>
       </Link>
     </>
   );
