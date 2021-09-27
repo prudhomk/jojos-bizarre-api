@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import { editStand } from '../../services/jojoApi';
 import { mungeSearch } from '../../services/mungeData';
 import { useCharacters, useStand } from '../../state/customHooks';
@@ -153,6 +154,9 @@ export default function StandEdit() {
         </label>
         <button>Edit Stand</button>
       </form>
+
+      <Link to={`/stands/${id}`}>Return Stand's Details Page</Link>
+
     </div>
   );
 }

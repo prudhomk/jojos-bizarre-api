@@ -8,8 +8,21 @@ export default function StandDetails() {
   const history = useHistory();
   const stand = useStand(id);
 
-  const handleClick = () => {
+  const handleEdit = () => {
     history.push(`/stands/edit/${id}`);
+  };
+
+  const handleDelete = async () => {
+
+    if(window.confirm('Are you sure you want to delete this stand?')) {
+      // await deleteCharacter(id);
+      history.push('/stands');
+    }
+
+  };
+
+  const handleReturn = async () => {
+    history.push('/stands');
   };
 
   return (
@@ -23,7 +36,9 @@ export default function StandDetails() {
       <p>Abilities: {stand.abilities}</p>
       <p>Battlecry: {stand.battlecry}</p>
 
-      <button onClick={handleClick}>Edit Stand</button>
+      <button onClick={handleEdit}>Edit Stand</button>
+      <button onClick={handleDelete}>Delete Stand</button>
+      <button onClick={handleReturn}>View All Stand</button>
     </div>
   );
 }
