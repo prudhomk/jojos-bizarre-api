@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
+import { deleteStand } from '../../services/jojoApi.js';
 import { useStand } from '../../state/customHooks.js';
 
 
@@ -16,6 +17,7 @@ export default function StandDetails() {
 
     if(window.confirm('Are you sure you want to delete this stand?')) {
       // await deleteCharacter(id);
+      await deleteStand(id);
       history.push('/stands');
     }
 
