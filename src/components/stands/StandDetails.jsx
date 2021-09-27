@@ -1,12 +1,16 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { useStand } from '../../state/customHooks.js';
 
 
 export default function StandDetails() {
   const { id } = useParams();
-
+  const history = useHistory();
   const stand = useStand(id);
+
+  const handleClick = () => {
+    history.push(`/stands/edit/${id}`);
+  };
 
   return (
     <div>
@@ -18,6 +22,9 @@ export default function StandDetails() {
       <p>Chapter: {stand.chapter}</p>
       <p>Abilities: {stand.abilities}</p>
       <p>Battlecry: {stand.battlecry}</p>
+
+      <button onClick={handleClick}>Edit Stand</button>
     </div>
   );
 }
+
