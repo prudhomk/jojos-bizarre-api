@@ -38,14 +38,14 @@ export default function StandForm() {
 
   const { characters } = useCharacters();
 
+  
   const handleSearch = async (e) => {
     e.preventDefault();
-    const searchData = mungeSearch(characters);
-    if(searchData.has(e.target.value)) {
-      setStandUser();
-    }
-    //Currently trying to display search results under search bar, 
-    //how to autofill form with search result
+    setSearch(e.target.value);
+    console.log('search', search);
+    const searchData = await mungeSearch(characters);
+    const filteredData = searchData.find(({ name }) => name.toLowerCase() === search.toLowerCase());
+    setStandUser(filteredData.id);
   };
 
   return (
@@ -113,7 +113,7 @@ export default function StandForm() {
             name="standUser"
             type="input"
             value={standUser}
-            onChange={((e) => setStandUser(e.target.value))}
+            readOnly={standUser}
           />
         </label>
         <label>
