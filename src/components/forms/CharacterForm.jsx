@@ -68,8 +68,7 @@ export default function CharacterForm() {
       isHuman,
       living
     });
-
-    console.log('new character', newCharacter);
+    
     history.push(`/characters/${newCharacter.id}`);
   };
 

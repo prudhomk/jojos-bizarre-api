@@ -8,6 +8,7 @@ import StandDetails from '../stands/StandDetails';
 import CharacterForm from '../forms/CharacterForm';
 import CharacterEdit from '../forms/CharacterEdit';
 import StandForm from '../forms/StandForm';
+import StandEdit from '../forms/StandEdit';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route exact path="/characters/:id" component={CharacterDetails}/>
         <Route exact path="/stands" component={StandList}/>
         <Route exact path="/stands/add" component={StandForm}/>
+        <Route exact path="/stands/edit/:id" component={StandEdit}/>
         <Route exact path="/stands/:id" component={StandDetails}/>
       </Switch>
     </>
