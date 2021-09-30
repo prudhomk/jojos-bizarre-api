@@ -1,7 +1,12 @@
 import React from 'react';
 
 const Home = () => {
-  return <h1>Home</h1>;
+  return (
+    <>
+      <p>GET /api/v1/characters</p>
+      <p>GET /api/v1/stands</p>
+    </>
+  );
 };
 
 export default Home;
