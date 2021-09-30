@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import { useCharacters } from '../../state/customHooks';
 import Character from './Character';
+import styles from './Character.scss';
 
 const CharacterList = () => {
   const { characters } = useCharacters();
@@ -21,7 +22,7 @@ const CharacterList = () => {
   return (
     <>
       <button onClick={handleAdd}>Add Character</button>
-      <h1>{characterElements}</h1>;
+      <ul className={styles.list}>{characterElements}</ul>;
     </>
   );
 };

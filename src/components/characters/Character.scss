@@ -1,0 +1,47 @@
+.character {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  height: 250px;
+  width: 200px;
+  border: 1px solid red;
+
+  img {
+    width: 30%;
+    height: 50%;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.details {
+  display: flex;
+  height: 100vh;
+}
+
+.detailInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  button {
+    margin: 5px;
+  }
+}

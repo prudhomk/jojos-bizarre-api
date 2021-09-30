@@ -32,7 +32,7 @@ export default function StandDetails() {
       <p>Name: {stand.name}</p>
       <p>Alternate Name: {stand.alternateName}</p>
       <p>Japanese: {stand.japaneseName}</p>
-      <p>Image: {stand.image}</p>
+      <img src={`/assets/${stand.image}`}/>
       <p>Stand User: {stand.standUser}</p>
       <p>Chapter: {stand.chapter}</p>
       <p>Abilities: {stand.abilities}</p>
