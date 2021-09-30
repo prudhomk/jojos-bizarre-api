@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import { useStands } from '../../state/customHooks';
 import Stand from './Stand';
+import styles from './Stand.scss';
 
 const StandList = () => {
   const history = useHistory();
@@ -20,7 +21,7 @@ const StandList = () => {
   return (
     <>
       <button onClick={handleClick}>Add Stand</button>
-      <h1>{standElements}</h1>\
+      <ul className={styles.list}>{standElements}</ul>
     </>
   );
 };

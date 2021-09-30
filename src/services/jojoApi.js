@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 export const fetchCharacters = async () => {
 
-  const res = await fetch('https://stormy-beach-42304.herokuapp.com/api/v1/characters');
+  const res = await fetch(`${process.env.API}/api/v1/characters`);
   const characters = await res.json();
   
   return characters;
@@ -9,7 +9,7 @@ export const fetchCharacters = async () => {
 
 export const fetchCharacter = async (id) => {
   
-  const res = await fetch(`https://stormy-beach-42304.herokuapp.com/api/v1/characters/${id}`);
+  const res = await fetch(`${process.env.API}/api/v1/characters/${id}`);
 
   const character = await res.json();
 
@@ -18,7 +18,7 @@ export const fetchCharacter = async (id) => {
 
 export const createCharacter = async (character) => {
 
-  const res = await fetch('https://stormy-beach-42304.herokuapp.com/api/v1/characters', {
+  const res = await fetch(`${process.env.API}/api/v1/characters`, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(character)
@@ -29,7 +29,7 @@ export const createCharacter = async (character) => {
 };
 
 export const editCharacter = async (character, id) => {
-  const res = await fetch(`https://stormy-beach-42304.herokuapp.com/api/v1/characters/${id}`, {
+  const res = await fetch(`${process.env.API}/api/v1/characters/${id}`, {
     method: 'PUT',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(character, id)
@@ -41,7 +41,7 @@ export const editCharacter = async (character, id) => {
 
 export const deleteCharacter = async (id) => {
   
-  const res = await fetch(`https://stormy-beach-42304.herokuapp.com/api/v1/characters/${id}`, {
+  const res = await fetch(`${process.env.API}/api/v1/characters/${id}`, {
     method: 'DELETE'
   });
   
@@ -50,7 +50,7 @@ export const deleteCharacter = async (id) => {
 
 export const fetchStands = async () => {
 
-  const res = await fetch('https://stormy-beach-42304.herokuapp.com/api/v1/stands');
+  const res = await fetch(`${process.env.API}/api/v1/stands`);
   const stands = await res.json();
 
   return stands;
@@ -58,7 +58,7 @@ export const fetchStands = async () => {
 
 export const fetchStand = async (id) => {
   
-  const res = await fetch(`https://stormy-beach-42304.herokuapp.com/api/v1/stands/${id}`);
+  const res = await fetch(`${process.env.API}/api/v1/stands/${id}`);
   const stand = await res.json();
   
   return stand;
@@ -66,7 +66,7 @@ export const fetchStand = async (id) => {
 
 export const createStand = async (stand) => {
 
-  const res = await fetch('https://stormy-beach-42304.herokuapp.com/api/v1/stands', {
+  const res = await fetch(`${process.env.API}/api/v1/stands`, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(stand)
@@ -78,7 +78,7 @@ export const createStand = async (stand) => {
 
 export const editStand = async (stand, id) => {
   
-  const res = await fetch(`https://stormy-beach-42304.herokuapp.com/api/v1/stands/${id}`, {
+  const res = await fetch(`${process.env.API}/api/v1/stands/${id}`, {
     method: 'PUT',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(stand, id)
@@ -90,7 +90,7 @@ export const editStand = async (stand, id) => {
 
 export const deleteStand = async (id) => {
 
-  const res = await fetch(`https://stormy-beach-42304.herokuapp.com/api/v1/stands/${id}`, {
+  const res = await fetch(`${process.env.API}/api/v1/stands/${id}`, {
     method: 'DELETE'
   });
 
