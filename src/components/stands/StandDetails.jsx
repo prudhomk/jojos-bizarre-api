@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { deleteStand } from '../../services/jojoApi.js';
 import { useStand } from '../../state/customHooks.js';
+import styles from './Stand.scss';
 
 
 export default function StandDetails() {
@@ -28,19 +29,22 @@ export default function StandDetails() {
   };
 
   return (
-    <div>
-      <p>Name: {stand.name}</p>
-      <p>Alternate Name: {stand.alternateName}</p>
-      <p>Japanese: {stand.japaneseName}</p>
+    <div className={styles.details}> 
       <img src={`/assets/${stand.image}`}/>
-      <p>Stand User: {stand.standUser}</p>
-      <p>Chapter: {stand.chapter}</p>
-      <p>Abilities: {stand.abilities}</p>
-      <p>Battlecry: {stand.battlecry}</p>
-
-      <button onClick={handleEdit}>Edit Stand</button>
-      <button onClick={handleDelete}>Delete Stand</button>
-      <button onClick={handleReturn}>View All Stand</button>
+      <div className={styles.detailInfo}>
+        <h1>{stand.name}'s Profile</h1>
+        <p>Name: {stand.name}</p>
+        <p>Alternate Name: {stand.alternateName}</p>
+        <p>Japanese: {stand.japaneseName}</p>
+        <p>Stand User: {stand.standUser}</p>
+        <p>Chapter: {stand.chapter}</p>
+        <p>Abilities: {stand.abilities}</p>
+        <p>Battlecry: {stand.battlecry}</p>
+        <div className={styles.buttons}></div>
+        <button onClick={handleEdit}>Edit Stand</button>
+        <button onClick={handleDelete}>Delete Stand</button>
+        <button onClick={handleReturn}>View All Stand</button>
+      </div>
     </div>
   );
 }
