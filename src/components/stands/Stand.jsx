@@ -7,7 +7,7 @@ export default function Stand({ id, name, image, standUser }) {
     <>
       <Link to={`/stands/${id}`}>
         <p>Name: {name}</p>
-        <p>Image: {image}</p>
+        <img src={`./assets/${image}`}/>
         <p>Stand User: {standUser}</p>
       </Link>
     </>
