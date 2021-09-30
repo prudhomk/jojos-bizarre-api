@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Stand.scss';
+import styles from '../styles/styles.scss';
 
 export default function Stand({ id, name, image, standUser }) {
   return (

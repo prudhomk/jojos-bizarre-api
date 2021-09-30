@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { deleteStand } from '../../services/jojoApi.js';
 import { useStand } from '../../state/customHooks.js';
-import styles from './Stand.scss';
+import styles from '../styles/styles.scss';
 
 
 export default function StandDetails() {

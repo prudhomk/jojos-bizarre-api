@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import { useCharacters } from '../../state/customHooks';
 import Character from './Character';
-import styles from './Character.scss';
+import styles from '../styles/styles.scss';
 
 const CharacterList = () => {
   const { characters } = useCharacters();
