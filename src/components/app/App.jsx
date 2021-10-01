@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import CharacterList from '../characters/CharacterList';
 import StandList from '../stands/StandList';
 import Home from '../home/Home';
+import Header from '../header/Header';
 import CharacterDetails from '../characters/CharacterDetails';
 import StandDetails from '../stands/StandDetails';
 import CharacterForm from '../forms/CharacterForm';
@@ -13,7 +14,7 @@ import StandEdit from '../forms/StandEdit';
 export default function App() {
   return (
     <>
-      <h1>Hello World</h1>
+      <Header/> 
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route exact path="/characters" component={CharacterList}/>

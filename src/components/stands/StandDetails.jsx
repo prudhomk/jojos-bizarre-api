@@ -1,14 +1,15 @@
 import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { deleteStand } from '../../services/jojoApi.js';
-import { useStand } from '../../state/customHooks.js';
+import { useStand, useCharacter } from '../../state/customHooks.js';
 import styles from '../styles/styles.scss';
-
 
 export default function StandDetails() {
   const { id } = useParams();
   const history = useHistory();
   const stand = useStand(id);
+
+  const character = useCharacter(stand.standUser);
 
   const handleEdit = () => {
     history.push(`/stands/edit/${id}`);
@@ -17,7 +18,6 @@ export default function StandDetails() {
   const handleDelete = async () => {
 
     if(window.confirm('Are you sure you want to delete this stand?')) {
-      // await deleteCharacter(id);
       await deleteStand(id);
       history.push('/stands');
     }
@@ -36,7 +36,7 @@ export default function StandDetails() {
         <p>Name: {stand.name}</p>
         <p>Alternate Name: {stand.alternateName}</p>
         <p>Japanese: {stand.japaneseName}</p>
-        <p>Stand User: {stand.standUser}</p>
+        <p>Stand User: {character.name}</p>
         <p>Chapter: {stand.chapter}</p>
         <p>Abilities: {stand.abilities}</p>
         <p>Battlecry: {stand.battlecry}</p>
