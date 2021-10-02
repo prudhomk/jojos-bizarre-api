@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import { useStands } from '../../state/customHooks';
 import Stand from './Stand';
-import styles from '../styles/styles.scss';
+import styles from '../styles/lists.scss';
 
 const StandList = () => {
   const history = useHistory();

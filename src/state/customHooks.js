@@ -24,7 +24,7 @@ export const useCharacter = (id) => {
       .then(setCharacter);
 
   }, [id]);
-
+  
   return character;
 };
 

@@ -1,0 +1,33 @@
+.home {
+  font-size: 30px;
+
+  table {
+    background-color: rgb(85, 19, 166);
+    margin: 5px;
+    border-radius: 20px;
+
+    th {
+      color: white;
+    }
+
+    tr {
+      border-radius: 10px;
+    }
+
+    td {
+      background-color: rgb(210, 171, 229);
+      border-radius: 20px;
+      width: 50%;
+      text-align: center;
+      padding: 30px;
+    }
+  }
+}
+
+.header {
+  font-size: 80px;
+  background-color: purple;
+  a {
+    color: white;
+  }
+}

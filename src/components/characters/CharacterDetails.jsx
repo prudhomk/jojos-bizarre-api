@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router';
 import { deleteCharacter } from '../../services/jojoApi';
 import { useCharacter } from '../../state/customHooks';
-import styles from '../styles/styles.scss';
+import styles from '../styles/lists.scss';
 
 export default function CharacterDetails() {
   const { id } = useParams();
