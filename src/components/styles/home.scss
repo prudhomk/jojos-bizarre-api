@@ -1,37 +1,101 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
 .home {
-  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  table {
-    background-color: rgb(85, 19, 166);
-    margin: 5px;
-    border-radius: 20px;
+  .intro {
+  }
 
-    th {
+  .welcome {
+  }
+
+  .table {
+    font-size: 20px;
+
+    table {
+      background-color: purple;
+      margin: 5px;
+      border-radius: 0px 0px 20px 20px;
       color: white;
-    }
 
-    tr {
-      border-radius: 10px;
-    }
+      th {
+        color: white;
+        background-color: rgb(85, 0, 85);
+      }
 
-    td {
-      background-color: rgb(210, 171, 229);
-      border-radius: 20px;
-      width: 50%;
-      text-align: center;
-      padding: 30px;
+      tr {
+        border-radius: 10px;
+      }
+
+      td {
+        border-radius: 20px 0px 0px 20px;
+        width: 50%;
+        text-align: center;
+        padding: 20px;
+      }
+
+      th,
+      td,
+      .examples {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 3px solid rgb(244, 141, 14);
+      }
+
+      tr:hover {
+        background-color: rgb(160, 93, 154);
+      }
+
+      .route {
+        border-radius: 20px 0px 0px 20px;
+      }
+
+      .desc {
+        border-radius: 0px 20px 20px 0px;
+      }
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .examples {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        color: white;
+      }
     }
   }
 }
 
 .header {
-  font-size: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
   background-color: purple;
+
   a {
     color: white;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
   }
-}
 
-.examples {
-  color: white;
+  img {
+    width: 200px;
+  }
+
+  .links {
+    display: flex;
+  }
 }
