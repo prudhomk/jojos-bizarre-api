@@ -23,13 +23,21 @@ const Home = () => {
 
   return (
     <>
+      <p>You thought this was an API, but it was me, DIO! </p>
       <div>
         <img src={randomGif()}/>
       </div>
+      <p>
+       Welcome to Jojo's Bizarre API, host to a collection 
+        of routes containing all the Jojo characters and stands
+        you would ever care to look for.
+      </p>
+  
       <div className={styles.home}>
         <table>
           <tr>
             <th>Routes</th>
+            <th>Examples</th>
             <th>Description</th>
           </tr>
           <tr>
