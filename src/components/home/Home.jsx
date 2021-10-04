@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { gifs } from './gifs';
 import styles from '../styles/home.scss';
 
@@ -42,38 +42,47 @@ const Home = () => {
           </tr>
           <tr>
             <td>GET /api/v1/characters</td>
+            <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/characters" target="_blank" rel="noreferrer">Example</a>
             <td>Get all characters</td>
           </tr>
           <tr>
             <td>GET /api/v1/characters/:id</td>
+            <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/characters/1" target="_blank" rel="noreferrer">Example</a>
             <td>Get a character by an id</td>
           </tr>
           <tr>
             <td>GET /api/v1/stands</td>
+            <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/stands" target="_blank" rel="noreferrer">Example</a>
             <td>Get all stands</td>
           </tr>
           <tr>
             <td>GET /api/v1/stands/:id</td>
+            <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/stands/1" target="_blank" rel="noreferrer">Example</a>
             <td>Get a stand by an id</td>
           </tr>
           <tr>
-            <td>GET /api/v1/characters/chapter?chapter=</td>
+            <td>GET /api/v1/characters/chapter?chapter=query</td>
+            <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/characters/chapter?chapter=stardust" target="_blank" rel="noreferrer">Example</a>
             <td>Get characters by chapter</td>
           </tr>
           <tr>
             <td>GET /api/v1/characters/human?isHuman=boolean</td>
+            <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/characters/human?isHuman=true" target="_blank" rel="noreferrer">Example</a>
             <td>Get characters dependent on whether they are human</td>
           </tr>
           <tr>
-            <td>GET /api/v1/characters/characters?isHuman=boolean?living=boolean</td>
+            <td>GET /api/v1/characters/living?living=boolean</td>
+            <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/characters/living?living=false" target="_blank" rel="noreferrer">Example</a>
             <td>Get characters dependent on whether they are living</td>
           </tr>
           <tr>
-            <td>GET /api/v1/characters/nationality?nationality=</td>
+            <td>GET /api/v1/characters/nationality?nationality=query</td>
+            <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/characters/nationality?nationality=egyptian" target="_blank" rel="noreferrer">Example</a>
             <td>Get characters based on nationality</td>
           </tr>
           <tr>
-            <td>GET /api/v1/characters/family?family=</td>
+            <td>GET /api/v1/characters/family?family=query</td>
+            <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/characters/family?family=joestar" target="_blank" rel="noreferrer">Example</a>
             <td>Get all based on their family</td>
           </tr>
         </table>
