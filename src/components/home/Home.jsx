@@ -23,8 +23,9 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      <p className={styles.intro}>You thought this was an API, but it was me, DIO! </p>
+      <p className={styles.speechbubble}>You thought this was an API, but it was me, DIO! </p>
       <img src={randomGif()}/>
+      <img className={styles.zipper} src="/zipper.png"/>
       <p className={styles.welcome}>
        Welcome to Jojo's Bizarre API, host to a collection 
         of routes containing all the Jojo characters and stands
