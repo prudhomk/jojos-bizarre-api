@@ -16,18 +16,29 @@ const Home = () => {
     history.push('/stands');
   };
 
+  const x = Math.floor(Math.random() * gifs.length);
+  
+  const randomQuote = () => {
+    return gifs[x].quote;
+  };
+
   const randomGif = () => {
-    const x = Math.floor(Math.random() * gifs.length);
-    return '../../../gifs/' + gifs[x];
+    return '../../../gifs/' + gifs[x].gif;
   };
 
   return (
     <div className={styles.home}>
-      <p className={styles.speechbubble}>You thought this was an API, but it was me, DIO! </p>
+      <p className={styles.speechbubble}>{randomQuote()}</p>
       <img src={randomGif()}/>
-      <img className={styles.zipper} src="/zipper.png"/>
+      <div className={styles.wrapper}>
+        <img className={styles.zipper} src="/zipper.png"/>
+      </div>
       <p className={styles.welcome}>
-       Welcome to Jojo's Bizarre API, host to a collection 
+       Welcome to Jojo's Bizarre API! 
+     
+        <br/>
+        <br/>
+        Host to a collection 
         of routes containing all the Jojo characters and stands
         you would ever care to look for.
       </p>
@@ -85,8 +96,10 @@ const Home = () => {
             <td className={styles.desc}>Get all based on their family</td>
           </tr>
         </table>
-        <button onClick={handleCharacter}>View All Characters</button>
-        <button onClick={handleStand}>View All Stands</button>
+        <div className={styles.buttons}>
+          <button onClick={handleCharacter}>View All Characters</button>
+          <button onClick={handleStand}>View All Stands</button>
+        </div>
       </div>
     </div>
   );
