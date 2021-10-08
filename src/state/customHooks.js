@@ -2,17 +2,19 @@
 import { useEffect, useState } from 'react';
 import { fetchCharacters, fetchCharacter, fetchStands, fetchStand } from '../services/jojoApi.js';
 
-export const useCharacters = () => {
+export const useCharacters = (page) => {
   const [characters, setCharacters] = useState([]);
+  const [charLength, setCharLength] = useState([]);
 
-  useEffect(() => {
-    
-    fetchCharacters()
-      .then(setCharacters);
+  useEffect(async () => {
 
-  }, []);
+    const res = await fetchCharacters(page);
+    setCharLength(res.length);
+    setCharacters(res.slice((page - 1) * 15, page * 15));
 
-  return { characters };
+  }, [page]);
+
+  return { characters, charLength };
 };
 
 export const useCharacter = (id) => {
