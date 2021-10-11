@@ -26,24 +26,26 @@ const CharacterList = () => {
     <>
       {
         loader ? <Loader/> :
-          <>
+          <div className={styles.wrapper}>
             <h1>Characters</h1>
-            <button onClick={handleAdd}>Add Character</button>
+            {/* <button onClick={handleAdd}>Add Character</button> */}
             <ul className={styles.list}>{characterElements}</ul>
-            <button 
-              disabled={page <= 1}
-              onClick={() => setPage(page - 1)} 
-            > 
-        Prev
-            </button>
-            <p>Page {page}</p>
-            <button 
-              disabled={page >= (charLength / 15)}
-              onClick={() => setPage(page + 1)}
-            >
-        Next
-            </button>
-          </>
+            <div className={styles.pagination}>
+              <button 
+                disabled={page <= 1}
+                onClick={() => setPage(page - 1)} 
+              > 
+              Prev
+              </button>
+              <p>Page {page}</p>
+              <button 
+                disabled={page >= (charLength / 15)}
+                onClick={() => setPage(page + 1)}
+              >
+              Next
+              </button>
+            </div>
+          </div>
     
       }
     </>

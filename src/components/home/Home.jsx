@@ -35,9 +35,8 @@ const Home = () => {
       </div>
       <p className={styles.welcome}>
        Welcome to Jojo's Bizarre API! 
-     
-        <br/>
-        <br/>
+      </p>
+      <p className={styles.description}>
         Host to a collection 
         of routes containing all the Jojo characters and stands
         you would ever care to look for.
