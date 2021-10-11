@@ -56,7 +56,7 @@ const Home = () => {
             <td className={styles.desc}>Get all characters</td>
           </tr>
           <tr>
-            <td className={styles.route}>GET /api/v1/characters/:id</td>
+            <td className={styles.route}>GET /api/v1/characters/&lt;character_id&gt;</td>
             <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/characters/1" target="_blank" rel="noreferrer">Example</a>
             <td className={styles.desc}>Get a character by an id</td>
           </tr>
@@ -66,36 +66,27 @@ const Home = () => {
             <td className={styles.desc}>Get all stands</td>
           </tr>
           <tr>
-            <td className={styles.route}>GET /api/v1/stands/:id</td>
+            <td className={styles.route}>GET /api/v1/stands/&lt;stand_id&gt;</td>
             <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/stands/1" target="_blank" rel="noreferrer">Example</a>
             <td className={styles.desc}>Get a stand by an id</td>
           </tr>
           <tr>
-            <td className={styles.route}>GET /api/v1/characters/chapter?chapter=query</td>
-            <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/characters/chapter?chapter=stardust" target="_blank" rel="noreferrer">Example</a>
-            <td className={styles.desc}>Get characters by chapter</td>
+            <td className={styles.route}>GET /api/v1/characters/query/query?&lt;category&gt;=&lt;query&gt;</td>
+            <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/characters/query/query?chapter=stardust&nationality=british" target="_blank" rel="noreferrer">Example</a>
+            <td className={styles.desc}>Get characters by query.<sup>*</sup></td>
           </tr>
           <tr>
-            <td className={styles.route}>GET /api/v1/characters/human?isHuman=boolean</td>
-            <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/characters/human?isHuman=true" target="_blank" rel="noreferrer">Example</a>
-            <td className={styles.desc}>Get characters dependent on whether they are human</td>
-          </tr>
-          <tr>
-            <td className={styles.route}>GET /api/v1/characters/living?living=boolean</td>
-            <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/characters/living?living=false" target="_blank" rel="noreferrer">Example</a>
-            <td className={styles.desc}>Get characters dependent on whether they are living</td>
-          </tr>
-          <tr>
-            <td className={styles.route}>GET /api/v1/characters/nationality?nationality=query</td>
-            <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/characters/nationality?nationality=egyptian" target="_blank" rel="noreferrer">Example</a>
-            <td className={styles.desc}>Get characters based on nationality</td>
-          </tr>
-          <tr>
-            <td className={styles.route}>GET /api/v1/characters/family?family=query</td>
-            <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/characters/family?family=joestar" target="_blank" rel="noreferrer">Example</a>
-            <td className={styles.desc}>Get all based on their family</td>
+            <td className={styles.route}>GET /api/v1/stands/query/query?&lt;category&gt;=&lt;query&gt;</td>
+            <a className={styles.examples} href="https://stand-by-me.herokuapp.com/api/v1/stands/query/query?chapter=stardust&abilities=time" target="_blank" rel="noreferrer">Example</a>
+            <td className={styles.desc}>Get stands by query.<sup>**</sup></td>
           </tr>
         </table>
+        <p>
+          <sup>*</sup>&nbsp;Valid Queries: name, chapter, nationality, family, abilities, isHuman, living, catchphrase.
+        </p>
+        <p>
+          <sup>**</sup>&nbsp;Valid Queries: name, alternateName, standUser, chapter, abilities, battlecry.
+        </p>
         <div className={styles.buttons}>
           <button onClick={handleCharacter}>View All Characters</button>
           <button onClick={handleStand}>View All Stands</button>

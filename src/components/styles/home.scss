@@ -37,7 +37,8 @@ body {
 
   .table {
     font-size: 20px;
-
+    min-width: 1075px;
+    width: 70%;
     table {
       background-color: purple;
       margin: 5px;
@@ -55,14 +56,13 @@ body {
 
       td {
         border-radius: 20px 0px 0px 20px;
-        width: 50%;
+        width: 55%;
         text-align: center;
         padding: 20px;
       }
 
       th,
-      td,
-      .examples {
+      td, .examples {
         padding: 8px;
         text-align: left;
         border-bottom: 3px solid rgb(244, 141, 14);
@@ -90,9 +90,13 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 20px;
+        padding: 15px;
         color: white;
       }
+    }
+    p {
+      display: flex;
+      justify-content: center;
     }
   }
 }
@@ -111,6 +115,7 @@ body {
 
 .header {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   font-size: 25px;

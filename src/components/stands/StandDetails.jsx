@@ -43,7 +43,7 @@ export default function StandDetails() {
         <div className={styles.buttons}></div>
         <button onClick={handleEdit}>Edit Stand</button>
         <button onClick={handleDelete}>Delete Stand</button>
-        <button onClick={handleReturn}>View All Stand</button>
+        <button onClick={handleReturn}>View All Stands</button>
       </div>
     </div>
   );

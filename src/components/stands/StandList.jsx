@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import { useStands } from '../../state/customHooks';
 import Stand from './Stand';
+import Loader from '../../services/Loader';
 import styles from '../styles/lists.scss';
 
 const StandList = () => {
+  const [page, setPage] = useState(1);
+  const { stands, stanLength, loader } = useStands(page);
   const history = useHistory();
-  const { stands } = useStands();
 
   const standElements = stands.map(stand => (
     <li key={stand.id}>
@@ -20,8 +22,27 @@ const StandList = () => {
 
   return (
     <>
-      <button onClick={handleClick}>Add Stand</button>
-      <ul className={styles.list}>{standElements}</ul>
+      {
+        loader ? <Loader/> :
+          <>
+            <h1>Stands</h1>
+            <button onClick={handleClick}>Add Stand</button>
+            <ul className={styles.list}>{standElements}</ul>
+            <button
+              disabled={page <= 1}
+              onClick={() => setPage(page - 1)}
+            >
+        Prev
+            </button>
+            <p>Page {page}</p>
+            <button
+              disabled={page >= (stanLength / 15)}
+              onClick={() => setPage(page + 1)}
+            >
+        Next
+            </button>
+          </>
+      }
     </>
   );
 };
