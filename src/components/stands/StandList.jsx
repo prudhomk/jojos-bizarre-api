@@ -24,24 +24,26 @@ const StandList = () => {
     <>
       {
         loader ? <Loader/> :
-          <>
+          <div className={styles.wrapper}>
             <h1>Stands</h1>
-            <button onClick={handleClick}>Add Stand</button>
+            {/* <button onClick={handleClick}>Add Stand</button> */}
             <ul className={styles.list}>{standElements}</ul>
-            <button
-              disabled={page <= 1}
-              onClick={() => setPage(page - 1)}
-            >
-        Prev
-            </button>
-            <p>Page {page}</p>
-            <button
-              disabled={page >= (stanLength / 15)}
-              onClick={() => setPage(page + 1)}
-            >
-        Next
-            </button>
-          </>
+            <div className={styles.pagination}>
+              <button
+                disabled={page <= 1}
+                onClick={() => setPage(page - 1)}
+              >
+              Prev
+              </button>
+              <p>Page {page}</p>
+              <button
+                disabled={page >= (stanLength / 15)}
+                onClick={() => setPage(page + 1)}
+              >
+              Next
+              </button>
+            </div>
+          </div>
       }
     </>
   );

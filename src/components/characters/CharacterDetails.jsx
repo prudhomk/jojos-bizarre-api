@@ -43,8 +43,8 @@ export default function CharacterDetails() {
         <p>Living: {JSON.stringify(character.living)}</p>
     
         <div className={styles.buttons}>
-          <button onClick={handleEdit}>Edit Character</button>
-          <button onClick={handleDelete}>Delete Character</button>
+          {/* <button onClick={handleEdit}>Edit Character</button>
+          <button onClick={handleDelete}>Delete Character</button> */}
           <button onClick={handleReturn}>View All Characters</button>
         </div>
       </div>

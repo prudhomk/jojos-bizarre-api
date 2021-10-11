@@ -41,8 +41,8 @@ export default function StandDetails() {
         <p>Abilities: {stand.abilities}</p>
         <p>Battlecry: {stand.battlecry}</p>
         <div className={styles.buttons}></div>
-        <button onClick={handleEdit}>Edit Stand</button>
-        <button onClick={handleDelete}>Delete Stand</button>
+        {/* <button onClick={handleEdit}>Edit Stand</button>
+        <button onClick={handleDelete}>Delete Stand</button> */}
         <button onClick={handleReturn}>View All Stands</button>
       </div>
     </div>
