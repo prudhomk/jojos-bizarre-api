@@ -33,6 +33,7 @@
   align-items: center;
   list-style: none;
   padding: 0;
+  max-width: 1200px;
 }
 
 .detailWrapper {
@@ -92,6 +93,11 @@
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   h1 {
     text-align: center;
     text-decoration: underline;
