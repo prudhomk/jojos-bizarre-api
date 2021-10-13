@@ -29,21 +29,23 @@ export default function StandDetails() {
   };
 
   return (
-    <div className={styles.details}> 
-      <img src={`/assets/${stand.image}`}/>
-      <div className={styles.detailInfo}>
-        <h1>{stand.name}'s Profile</h1>
-        <p>Name: {stand.name}</p>
-        <p>Alternate Name: {stand.alternateName}</p>
-        <p>Japanese: {stand.japaneseName}</p>
-        <p>Stand User: {character.name}</p>
-        <p>Chapter: {stand.chapter}</p>
-        <p>Abilities: {stand.abilities}</p>
-        <p>Battlecry: {stand.battlecry}</p>
-        <div className={styles.buttons}></div>
-        {/* <button onClick={handleEdit}>Edit Stand</button>
+    <div className={styles.detailWrapper}>
+      <div className={styles.details}> 
+        <img src={`/assets/${stand.image}`}/>
+        <div className={styles.detailInfo}>
+          <h1>{stand.name}'s Profile</h1>
+          <p>Name: {stand.name}</p>
+          <p>Alternate Name: {stand.alternateName}</p>
+          <p>Japanese: {stand.japaneseName}</p>
+          <p>Stand User: {character.name}</p>
+          <p>Chapter: {stand.chapter}</p>
+          <p>Abilities: {stand.abilities}</p>
+          <p>Battlecry: {stand.battlecry}</p>
+          <div className={styles.buttons}></div>
+          {/* <button onClick={handleEdit}>Edit Stand</button>
         <button onClick={handleDelete}>Delete Stand</button> */}
-        <button onClick={handleReturn}>View All Stands</button>
+          <button onClick={handleReturn}>View All Stands</button>
+        </div>
       </div>
     </div>
   );
