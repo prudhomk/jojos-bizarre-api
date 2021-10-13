@@ -11,13 +11,13 @@ export default function Stand({ id, name, image, standUser }) {
   
   return (
     <>
-      <div className={styles.stand}>
-        <Link to={`/stands/${id}`}>
+      <Link to={`/stands/${id}`}>
+        <div className={styles.stand}>
           <p>Name: {name}</p>
           <img src={`./assets/${image}`}/>
           <p>Stand User: { character.name }</p>
-        </Link>
-      </div>
+        </div>
+      </Link>
     </>
   );
 }

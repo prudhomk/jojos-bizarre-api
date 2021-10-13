@@ -6,13 +6,13 @@ import styles from '../styles/lists.scss';
 export default function Character({ id, chapter, image, name }) {
   return (
     <>
-      <div className={styles.character}>
-        <Link to={`/characters/${id}`}>
+      <Link to={`/characters/${id}`}>
+        <div className={styles.character}>
           <p>Name: {name}</p>
           <img src={`./assets/${image}`}/>
           <p>Chapter: {chapter}</p>
-        </Link>
-      </div>    
+        </div>    
+      </Link>
     </>
   );
 }
