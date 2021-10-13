@@ -28,13 +28,25 @@
   padding: 0;
 }
 
+.detailWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .details {
   display: flex;
-  height: auto;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  padding: 10%;
+  max-width: 1000px;
+  min-width: 500px;
 
   img {
-    width: 20%;
-    margin: 10%;
+    width: 40%;
+    margin: 5%;
     object-fit: contain;
   }
 }
@@ -46,7 +58,7 @@
   border: 2px solid purple;
   border-radius: 20px;
   padding: 2rem;
-  height: 80vh;
+  width: 40%;
 
   p {
     padding: 0;

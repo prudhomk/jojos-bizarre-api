@@ -28,24 +28,26 @@ export default function CharacterDetails() {
   };
   
   return (
-    <div className={styles.details}>
-      <img src={`/assets/${character.image}`}/>
-      <div className={styles.detailInfo}>
-        <h1>{character.name}'s Profile</h1>
-        <p>Name: {character.name}</p>
-        <p>Japanese Name: {character.japaneseName}</p>
-        <p>Catchphrase: {character.catchphrase}</p>
-        <p>Nationality: {character.nationality}</p>
-        <p>Abilities: {character.abilities}</p>
-        <p>Chapter: {character.chapter}</p>
-        <p>Family: {character.family}</p>
-        <p>IsHuman: {JSON.stringify(character.isHuman)}</p>
-        <p>Living: {JSON.stringify(character.living)}</p>
+    <div className={styles.detailWrapper}>
+      <div className={styles.details}>
+        <img src={`/assets/${character.image}`}/>
+        <div className={styles.detailInfo}>
+          <h1>{character.name}'s Profile</h1>
+          <p>Name: {character.name}</p>
+          <p>Japanese Name: {character.japaneseName}</p>
+          <p>Catchphrase: {character.catchphrase}</p>
+          <p>Nationality: {character.nationality}</p>
+          <p>Abilities: {character.abilities}</p>
+          <p>Chapter: {character.chapter}</p>
+          <p>Family: {character.family}</p>
+          <p>IsHuman: {JSON.stringify(character.isHuman)}</p>
+          <p>Living: {JSON.stringify(character.living)}</p>
     
-        <div className={styles.buttons}>
-          {/* <button onClick={handleEdit}>Edit Character</button>
+          <div className={styles.buttons}>
+            {/* <button onClick={handleEdit}>Edit Character</button>
           <button onClick={handleDelete}>Delete Character</button> */}
-          <button onClick={handleReturn}>View All Characters</button>
+            <button onClick={handleReturn}>View All Characters</button>
+          </div>
         </div>
       </div>
     </div>
