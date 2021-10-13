@@ -1,20 +1,27 @@
 .character,
 .stand {
-  display: flex;
+  display: grid;
+  grid-template-rows: 10% auto auto;
   justify-content: center;
+  align-items: center;
   text-align: center;
   margin: 5px;
   padding: 5px;
-  height: 250px;
+  height: 17rem;
   width: 200px;
-  border: 1px solid red;
+  border: 2px solid red;
 
   img {
-    width: 30%;
-    height: 50%;
+    height: 10rem;
+    width: 12rem;
     object-fit: contain;
+    place-self: center;
     margin: 0;
     padding: 0;
+  }
+
+  p {
+    margin: 5px;
   }
 }
 
