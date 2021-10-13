@@ -16,4 +16,4 @@ jobs:
       - run: npm test
         env:
           CI: true
-          API: ${{ secrets.API }}
+          API: https://stand-by-me.herokuapp.com
