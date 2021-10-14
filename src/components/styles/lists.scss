@@ -1,20 +1,27 @@
 .character,
 .stand {
-  display: flex;
+  display: grid;
+  grid-template-rows: 10% auto auto;
   justify-content: center;
+  align-items: center;
   text-align: center;
   margin: 5px;
   padding: 5px;
-  height: 250px;
+  height: 17rem;
   width: 200px;
-  border: 1px solid red;
+  border: 2px solid red;
 
   img {
-    width: 30%;
-    height: 50%;
+    height: 10rem;
+    width: 12rem;
     object-fit: contain;
+    place-self: center;
     margin: 0;
     padding: 0;
+  }
+
+  p {
+    margin: 5px;
   }
 }
 
@@ -26,15 +33,28 @@
   align-items: center;
   list-style: none;
   padding: 0;
+  max-width: 1200px;
+}
+
+.detailWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .details {
   display: flex;
-  height: auto;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  padding: 10%;
+  max-width: 1000px;
+  min-width: 500px;
 
   img {
-    width: 20%;
-    margin: 10%;
+    width: 40%;
+    margin: 5%;
     object-fit: contain;
   }
 }
@@ -46,7 +66,7 @@
   border: 2px solid purple;
   border-radius: 20px;
   padding: 2rem;
-  height: 80vh;
+  width: 40%;
 
   p {
     padding: 0;
@@ -73,6 +93,11 @@
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   h1 {
     text-align: center;
     text-decoration: underline;
